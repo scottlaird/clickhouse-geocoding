@@ -20,8 +20,8 @@ Clickhouse doesn't currently have `CREATE OR REPLACE` for either.
 On my machine, it takes up to 30 seconds to create the `ip_trie`
 dictionary on first use, but after that updates shouldn't add
 substantial latency.  The underlying geocoding data gets updates
-roughly once per month, and this will automatically update its view of
-the data roughly once per week.
+monthly, and this will automatically update its view of the data
+roughly once per week.
 
 ## Usage
 
