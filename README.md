@@ -5,7 +5,11 @@ This is a collection of SQL for implementing
 [Clickhouse](https://clickhouse.com/).  It's effectively a
 version-controlled (and probably extended) copy of the code from my
 blog post [Geocoding IP Addresses with
-Clickhouse](https://scottstuff.net/posts/2025/03/21/geocoding-ip-addresses-with-clickhouse/)
+Clickhouse](https://scottstuff.net/posts/2025/03/21/geocoding-ip-addresses-with-clickhouse/).
+This is based on a [blog post from
+Clickhouse](https://clickhouse.com/blog/geolocating-ips-in-clickhouse-and-grafana)
+and [Guillaume Matheron's work extending this to
+IPv6](https://blog.guillaumematheron.fr/2023/486/ip-based-geolocation-in-clickhouse-with-ipv6/).
 
 ## Adding to Clickhouse
 
