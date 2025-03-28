@@ -116,7 +116,7 @@ CREATE OR REPLACE DICTIONARY ip_trie (
 PRIMARY KEY cidr
 SOURCE(clickhouse(table ‘geoip’))
 LAYOUT(ip_trie)
-LIFETIME(3600);
+LIFETIME(86400);  -- update daily
 
 
 -- To use, see the blog post at the top, or
