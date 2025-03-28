@@ -27,6 +27,19 @@ substantial latency.  The underlying geocoding data gets updates
 monthly, and this will automatically update its view of the data
 roughly once per week.
 
+### Authentication
+
+Note that creating dictionaries in Clickhouse frequently [requires you
+to provide a Clickhouse username and
+password](https://clickhouse.com/docs/sql-reference/statements/create/dictionary#create-a-dictionary-from-a-table-in-the-current-clickhouse-service)
+(or other auth method) as part of the `CREATE DICTIONARY` command.
+This is true *even if you're accessing data in the same Clickhouse
+instance*.  If you miss this, then attempts to use the dict will get
+authentication errors.  If this happens to you, then `DROP DICTIONARY
+ip_trie` and re-add it, changing `SOURCE(clickhouse(table ‘geoip’))`
+to `SOURCE(clickhouse(table 'geoip' user '...' password '...' db
+'...'))`.
+
 ## Usage
 
 See [Geocoding IP Addresses with
