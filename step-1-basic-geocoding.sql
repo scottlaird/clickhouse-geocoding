@@ -68,7 +68,7 @@ order by cidr;
 --
 -- Note that this is rebuilt ~weekly automatically.
 CREATE MATERIALIZED VIEW geocode_mv
-REFRESH AFTER 1 week RANDOMIZE FOR 1 day
+REFRESH EVERY 1 week RANDOMIZE FOR 1 day
 TO geoip AS
   WITH
       bitXor(ip_range_start, ip_range_end) as xor,
