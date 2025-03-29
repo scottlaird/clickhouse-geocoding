@@ -40,6 +40,13 @@ ip_trie` and re-add it, changing `SOURCE(clickhouse(table ‘geoip’))`
 to `SOURCE(clickhouse(table 'geoip' user '...' password '...' db
 '...'))`.
 
+### Adding Autonomous System data
+
+If you add `step-2-adding-isp-information.sql`, then you'll also have
+data on which organization owns which IP addresses.  This will be
+whichever organization announces the IP block via BGP, so sometimes
+it'll be the end company and sometimes it'll be their ISP.
+
 ## Usage
 
 See [Geocoding IP Addresses with
@@ -55,6 +62,12 @@ FROM ...
 
 You can fetch multiple fields from the `ip_trie` dictionary in a
 single lookup; see the blog post for syntax.
+
+### Looking up Autonomous System data
+
+You can use `dictGet('ip_asn_trie', 'as_organization', toIPv6(isp)) as
+as_organization` to fetch the name of the organization that owns the
+BGP announcement for any given IP.
 
 ## Attribution
 

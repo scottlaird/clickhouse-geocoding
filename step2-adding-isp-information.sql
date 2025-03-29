@@ -85,6 +85,6 @@ LIFETIME(86400);  -- update daily
 
 -- To use, see the blog post at the top, or
 --
---   SELECT ip, dictGet('ip_trie_asn', 'as_organization', toIPv6(ip)) AS as_organization FROM ...
+--   SELECT ip, dictGet('ip_asn_trie', 'as_organization', toIPv6(ip)) AS as_organization FROM ...
 --
 -- to start.
